@@ -1,0 +1,54 @@
+.deprem-content {
+    padding: 20px;
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.deprem-content::-webkit-scrollbar-thumb {
+    animation: scrollMove 10s linear infinite;
+}
+
+#deprem-earthquake h2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+#deprem-earthquakeAwareness {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+#deprem-earthquakeAwareness h2 {
+    color: rgb(0, 162, 255);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.deprem-eq-container {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    max-height: 500px;
+    overflow-y: auto;
+    color: #fff;
+    border: 3px solid rgb(0, 162, 255);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto 20px;
+    background: #333;
+}
+
+*:not(input):not(textarea) {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}

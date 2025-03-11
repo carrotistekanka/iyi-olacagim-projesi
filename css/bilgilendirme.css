@@ -1,0 +1,113 @@
+#bilgilendirme {
+    background: #333;
+    padding: 20px;
+    border: 2px solid rgb(0, 162, 255);
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+#bilgilendirme h2 {
+    color: rgb(0, 162, 255);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#bilgilendirme p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgb(255, 255, 255);
+}
+
+.bilgilendirme-container p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgb(255, 255, 255);
+}
+
+.bilgilendirme-container ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.bilgilendirme-container ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.bilgilendirme-container ul li strong {
+    color: rgb(0, 162, 255);
+}
+
+
+.bilgilendirme-container p:last-child {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#videolar {
+    text-align: center; /* Başlığı ortala */
+    padding: 20px;
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column; /* Video ve başlığı dikey hizala */
+    align-items: center; /* Ortala */
+    margin: 20px 0;
+}
+
+.video-container video {
+    width: 80%; /* Videoları küçült */
+    max-width: 600px; /* Maksimum genişlik belirle */
+    border-radius: 15px; /* Kenarları yuvarlat */
+    border: 2px solid #444; /* 2px çerçeve */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+}
+
+.video-container figcaption {
+    display: block; /* Eğer gizli ise aç */
+    margin-top: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black; /* Yazıyı belirgin hale getir */
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Hafif arka plan ekleyerek belirginleştir */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.bilgilendirme-altyazi p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-shadow: 0 1px 20px rgba(0, 0, 0, 1);
+    line-height: 1.6;
+    color: rgb(255, 255, 255);
+}
+
+.bilgilendirme-altyazi p:last-child {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.bilgilendirme-altyazi b {
+    margin-bottom: 15px;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000, 1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgb(255, 0, 0);
+}
+
+.bilgilendirme-altyazi b:last-child {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #ff0000;
+}

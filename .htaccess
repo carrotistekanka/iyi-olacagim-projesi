@@ -1,0 +1,18 @@
+<Directory "/var/www/html">
+    Options -Indexes
+</Directory>
+
+# 404 hata sayfası
+ErrorDocument 404 /404.html
+
+# JS ve CSS dosyalarına tarayıcıdan doğrudan erişimi engeller, ancak site içinde çalışır
+RewriteEngine On
+
+# Eğer istek doğrudan tarayıcıdan geliyorsa (Referer yoksa veya yanlışsa) 404'e yönlendirir
+RewriteCond %{THE_REQUEST} \.(js|css) [NC]
+RewriteRule .* /404.html [R=404,L]
+
+# URL Rewrite - .html uzantısını gizler
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC, L]

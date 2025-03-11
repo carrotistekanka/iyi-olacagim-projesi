@@ -1,0 +1,88 @@
+#iletisim {
+    background: #333;
+    padding: 20px;
+    border: 2px solid rgb(0, 162, 255);
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+#iletisim h2 {
+    color: rgb(0, 162, 255);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#iletisim p {
+    color: #fff;
+}
+
+.iletisim-container p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgb(255, 255, 255);
+}
+
+.iletisim-container ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.iletisim-container ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.iletisim-container ul li strong {
+    color: rgb(0, 162, 255);
+}
+
+
+.iletisim-container p:last-child {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out;
+}
+.contact-item:hover {
+    transform: scale(1.05);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 1);
+}
+.contact-item i {
+    font-size: 24px;
+    width: 30px;
+    text-align: center;
+}
+.contact-item a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+*:not(input):not(textarea) {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}

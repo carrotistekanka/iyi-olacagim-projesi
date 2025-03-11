@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" type="image/svg+xml" href="../images/favicon.ico">
+        <title>İyi Olacağım - Son Depremler</title>
+        <link rel="stylesheet" href="../css/anasayfa.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="../css/depremler.css">
+        <meta name="description" content="Güncel son depremleri görüntüleyin.">
+        <meta name="keywords" content="deprem bilgi, deprem yardım, deprem haberleri, deprem bilgilendirme, deprem hazırlık, proje">
+        <meta name="google-adsense-account" content="ca-pub-1090009495337742">
+        <meta name="author" content="carrotistekanka & eren_galiba">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1090009495337742" crossorigin="anonymous"></script>
+        <meta property="og:title" content="İyi Olacağım Projesi">
+        <meta property="og:description" content="Güncel son depremleri görüntüleyin.">
+        <meta property="og:url" content="https://www.iyi-olacagim.info">
+    </head>
+    <body>
+        <div id="loading-screen">
+            <img src="../images/iyi-olacagim-logo.png" alt="Yükleme Resmi" class="loading-image">
+            <p>Yükleniyor...</p>
+            <style>
+      #loading-screen p {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+      }
+            </style>
+        </div>
+        <header>
+            <!-- Navigasyon Alanı -->
+            <nav class="navigation">
+                <div class="submenu">
+                    <a href="index.html">Anasayfa</a>
+                    <a href="depremler.html">Son Depremler</a>
+                    <a href="bilgilendirme.html">Bilgilendirme</a>
+                    <a href="bağış.html">Bağış Yap</a>
+                    <a href="gönüllü-ol.html">Gönüllü Ol</a>
+                    <a href="iletişim.html">İletişim</a>
+                    <a href="biz-kimiz.html">Biz Kimiz?</a>
+                </div>
+            </nav>
+            <!-- Sağ Üst Kısımda Logo -->
+            <a href="index.html">
+                <div class="logo">
+                    <img src="../images/iyi-olacagim-logo.png" alt="Logo">
+                </div>
+            </a>
+        </nav>
+    </header>
+    <div class="deprem-content">
+        <section id="deprem-earthquake">
+            <h2>Deprem Verileri</h2>
+            <div class="deprem-eq-container">
+                <!-- API’den çekilen deprem verileri buraya yüklenecek -->
+                <div id="earthquakeData">
+                    <!-- Deprem verileri dinamik olarak eklenecek --></div>
+            </div>
+        </section>
+    </div>
+    <script src="../fayhatti.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../geri-bildirim.js"></script>
+    <script src="../deprem-veri.js"></script>
+    <script>
+
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      this.classList.toggle('open');
+      document.getElementById('submenu').classList.toggle('open');
+    });
+    document.addEventListener('click', function (event) {
+      const menu = document.getElementById('menuToggle');
+      const submenu = document.getElementById('submenu');
+      if (!menu.contains(event.target) && !submenu.contains(event.target)) {
+        menu.classList.remove('open');
+        submenu.classList.remove('open');
+      }
+    });
+    $(document).ready(function() {
+    function fetchEarthquakeData() {
+        $.ajax({
+            url: 'https://api.orhanaydogdu.com.tr/deprem/kandilli/live',
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                let earthquakes = response.result;
+                let html = '';
+                if (earthquakes && Array.isArray(earthquakes) && earthquakes.length > 0) {
+                    earthquakes.forEach(function(eq) {
+                        html += '<div class="earthquake-item" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">'; // Çerçeve
+                        html += '<p><strong>Zaman:</strong> ' + (eq.date || 'Bilinmiyor') + '</p>';
+                        html += '<p><strong>Büyüklük:</strong> ' + (eq.mag || 'N/A') + '</p>';
+                        html += '<p><strong>Yer:</strong> ' + (eq.title || 'Bilinmiyor') + '</p>';
+                        html += '<p><strong>Derinlik:</strong> ' + (eq.depth || 'N/A') + ' km</p>';
+                        html += '<p><strong>Enlem:</strong> ' + (eq.geojson?.coordinates[1] || 'N/A') + '</p>';
+                        html += '<p><strong>Boylam:</strong> ' + (eq.geojson?.coordinates[0] || 'N/A') + '</p>';
+                        html += '</div>';
+                        html += '<pre style="font-family: monospace; color: #777;">\n\n</pre>'; // Çerçeve ve yeni satır
+                    });
+                } else {
+                    html = '<p>Deprem verisi bulunamadı.</p>';
+                }
+                $('#earthquakeData').html(html);
+            },
+            error: function() {
+                $('#earthquakeData').html('<p>Deprem verileri alınamadı.</p>');
+            }
+        });
+    }
+
+    fetchEarthquakeData();
+    setInterval(fetchEarthquakeData, 30000);
+});
+
+window.onload = function() {
+    setTimeout(() => {
+        document.getElementById("loading-screen").style.display = "none";
+    }, 2000);
+};
+
+                  if (window.location.pathname === '/nonexistent-page') {
+                    window.location.replace('./404.html');
+                  }
+    </script>
+    <script src="../data.js"></script>
+    <script src="../engel.js"></script>
+</body>
+</html>

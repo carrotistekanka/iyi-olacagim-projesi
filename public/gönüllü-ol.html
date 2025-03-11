@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" type="image/svg+xml" href="../images/favicon.ico">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <meta name="description" content="iyi olacağım projesine katkıda bulunmak adına üye olabilirsiniz.">
+        <meta name="keywords" content="deprem bilgi, deprem yardım, deprem haberleri, deprem bilgilendirme, deprem hazırlık, proje">
+        <meta name="google-adsense-account" content="ca-pub-1090009495337742">
+        <meta name="author" content="carrotistekanka & eren_galiba">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1090009495337742" crossorigin="anonymous"></script>
+        <meta property="og:title" content="İyi Olacağım Projesi">
+        <meta property="og:description" content="iyi olacağım projesine katkıda bulunmak adına üye olabilirsiniz.">
+        <meta property="og:url" content="https://www.iyi-olacagim.info">
+        <title>İyi Olacağım - Gönüllü Ol</title>
+    </head>
+    <style>
+            #submit {
+                background-color: #28a745;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .notification {
+                display: none;
+                position: fixed;
+                top: 20px;
+                right: -300px; /* Başlangıçta sağda gizli */
+                padding: 15px;
+                margin-top: 20px;
+                border-radius: 5px;
+                z-index: 9999;
+                transition: right 0.5s ease-in-out;
+            }
+
+            .success {
+                background-color: #d4edda;
+                color: #155724;
+            }
+
+            .error {
+                background-color: #f8d7da;
+                color: #721c24;
+            }
+
+            /* Sağdan sola gelen animasyon */
+            .show-notification {
+                right: 20px; /* Bildirim sağa kayacak */
+            }
+
+            /* Kaybolma animasyonu */
+            .hide-notification {
+                right: -300px;
+            }
+    </style>
+    <body>
+        <div class="button-container">
+            <a href="index.html">
+                <div class="logo">
+                    <img src="../images/iyi-olacagim-logo.png" alt="Logo">
+                </div>
+            </a>
+            <a href="index.html">
+                <button class="homepage-btn">Anasayfa</button>
+            </a>
+            <a href="depremler.html">
+                <button class="depremler-btn">Son Depremler</button>
+            </a>
+            <a href="bilgilendirme.html">
+                <button class="bilgilendirme-btn">Bilgilendirme</button>
+            </a>
+            <a href="bağış.html">
+                <button class="donate-btn">Bağış Yap</button>
+            </a>
+            <a href="gönüllü-ol.html">
+                <button class="gonullu-btn">Gönüllü Ol</button>
+            </a>
+            <a href="biz-kimiz.html">
+                <button class="volunteer-btn">Biz Kimiz?</button>
+            </a>
+            <a href="iletişim.html">
+                <button class="iletisim-btn">İletişim</button>
+            </a>
+        </div>
+        <div class="container">
+            <h2>Gönüllü Başvuru Formu</h2>
+            <form id="infoForm">
+                <label for="name">Adınız:</label>
+                <input type="text" id="name" required>
+                <br>
+                <label for="surname">Soyadınız:</label>
+                <input type="text" id="surname" required>
+                <br>
+                <label for="birthdate">Doğum Tarihi:</label>
+                <input type="date" id="birthdate">
+                <br>
+                <label for="address">Adresiniz:</label>
+                <input type="text" id="address">
+                <br>
+                <label for="phone">Telefon:</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="500 555 55 55"
+                    required
+                >
+                <br>
+                <label for="mail">E-posta:</label>
+                <input type="email" id="mail" required>
+                <br>
+                <label for="description">Açıklama:</label>
+                <textarea id="description" rows="4" placeholder="Kendiniz hakkında kısa bir açıklama yazabilirsiniz."></textarea>
+                <button type="submit" id="submit">Başvuruyu Gönder</button>
+                <br>
+            </form>
+            <div id="notification" class="notification">
+                <strong id="responseTitle"></strong>
+                <p id="responseDetails"></p>
+            </div>
+        </div>
+        <div id="earthquake-container">
+            <h2>Son Depremler</h2>
+            <div id="earthquakeData">
+                <p>Deprem verileri yükleniyor...</p>
+            </div>
+        </div>
+        <script>
+            if (window.location.pathname === '/nonexistent-page') {
+              window.location.replace('./404.html');
+            }
+        </script>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://trusted-cdn.com;">
+        <script src="../gönüllü-ol.js"></script>
+        <script src="../form.js"></script>
+        <script src="../engel.js"></script>
+        <script src="../data.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="../deprem-veri.js"></script>
+    </body>
+</html>

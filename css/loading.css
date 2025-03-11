@@ -1,0 +1,51 @@
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 0, 0, 0.2); /* Hafif kırmızı */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+/* Kalp atışı animasyonu */
+.loading-image {
+    width: 100px;
+    height: 100px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3); /* Kalp biraz büyür */
+    }
+    100% {
+        transform: scale(1); /* Yeniden eski boyutuna döner */
+    }
+}
+
+.loading {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+*:not(input):not(textarea) {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
