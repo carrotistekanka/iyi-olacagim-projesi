@@ -16,7 +16,7 @@
 
 **Sunucu:** Node, Express
 
-
+# Kurulum
 ```bash 
   git clone https://github.com/carrotistekanka/iyi-olacagim-projesi.git
   cd iyi-olacagim
